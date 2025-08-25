@@ -1,0 +1,461 @@
+POST /article/_search
+{  "profile": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "delFlag": "0"
+          }
+        },
+        {
+          "match_phrase_prefix": {
+            "state": "PUBLISH"
+          }
+        }
+      ],
+      "must": [
+        {
+          "multi_match": {
+            "query": "Real",
+            "fields": ["title", "contentText"],
+            "analyzer": "ngram_analyzer",
+            "type": "phrase"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "issueTime": {
+        "order": "desc"
+      }
+    }
+  ],
+  "from": 0,
+  "size": 10,
+  "_source": {
+    "includes": [
+      "id", "title", "contentText", "issueTime", "readPermission", 
+      "openCommentState", "matchId", "likeCount", "commentCount", 
+      "createTime", "userId", "matchId"
+    ],
+    "excludes": []
+  },
+  "track_total_hits": false
+}
+
+
+{
+  "took" : 94,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "max_score" : null,
+    "hits" : [
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68abdbb625700f6c36369940",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756093366202,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756093366202,
+          "readPermission" : "PUBLIC",
+          "contentText" : "I'm deep into NBA Hoop Grid Reverse #512, and I've successfully cracked the most popular answer for every single square – all but one! This particular box is proving to be a real head-scratcher. I need a player who was active in the 2010s and, during any season of their career, averaged less than 10 points per game. It sounds straightforward, but the top guesses like Shaq, Brian Scalabrine, Anthony Bennett, Ben Simmons, and Vince Carter are all off the mark. I've already cycled through all the fan-favorite 'meme' players such as JaVale McGee, JR Smith, and Nick Young, plus a host of legends including Dirk Nowitzki, Tracy McGrady, Tim Duncan, and Andre Iguodala. Any bright ideas out there? Do you think you know the elusive answer?",
+          "likeCount" : 0,
+          "id" : "68abdbb625700f6c36369940",
+          "title" : null,
+          "userId" : 99678068,
+          "matchId" : null,
+          "commentCount" : 0
+        },
+        "sort" : [
+          1756093366202
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68abbb9a3a0dcb7feb8e292b",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756085146834,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756085146834,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Hold on a minute! During today's Real Madrid vs Oviedo match, it looks like Opta made a blunder. They credited Garcia with a shot on target instead of Tchouameni in the 78th minute, off an Mbappe corner. I had a bet on Tchouameni for a SOT at +210, so this is pretty frustrating. The replays clearly show it was Tchouameni, and even the commentators were saying his name. Is there a way to challenge this, or do I just have to wait for Opta to hopefully correct it themselves?",
+          "likeCount" : 0,
+          "id" : "68abbb9a3a0dcb7feb8e292b",
+          "title" : null,
+          "userId" : 99979136,
+          "matchId" : null,
+          "commentCount" : 1
+        },
+        "sort" : [
+          1756085146834
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68abb9483a0dcb7feb8e28bb",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756084552485,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756084552485,
+          "readPermission" : "PUBLIC",
+          "contentText" : """In the second round of La Liga, Real Oviedo hosted Real Madrid. In the first half, Arda Güler provided an assist for Kylian Mbappé to open the scoring. In the second half, Vinícius set up Mbappé to double the lead. During stoppage time, Vinícius added a low shot to seal the win. The match ended with Real Madrid defeating Real Oviedo 3-0, securing their second consecutive victory.
+""",
+          "likeCount" : 0,
+          "id" : "68abb9483a0dcb7feb8e28bb",
+          "title" : "",
+          "userId" : 99680744,
+          "matchId" : "2804311",
+          "commentCount" : 15
+        },
+        "sort" : [
+          1756084552485
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68abb6463a0dcb7feb8e2825",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756083782568,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756083782568,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Ever wondered about fantasy football? It's like being the general manager of your own team, but with real-life players! You draft actual football players onto your fantasy squad, and they earn points for you based on their performance in real games – think touchdowns, yards, and tackles. You then compete against other managers in your league, trying to outscore them each week. To get started, you can usually join a league through popular sports websites like ESPN or Yahoo Sports. Once you're in, you'll participate in a draft to pick your players, and then the real fun begins!",
+          "likeCount" : 0,
+          "id" : "68abb6463a0dcb7feb8e2825",
+          "title" : null,
+          "userId" : 99678001,
+          "matchId" : null,
+          "commentCount" : 1
+        },
+        "sort" : [
+          1756083782568
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab9be53a0dcb7feb8e161e",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756077029707,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756077029707,
+          "readPermission" : "PUBLIC",
+          "contentText" : "¡Golazo en LaLiga SmartBank! En la jornada 2, el Real Sociedad B venció al Málaga gracias a una espectacular chilena de Rafa Rodríguez en el minuto 86. Un tanto para enmarcar. Vídeo compartido por la Peña Malaguista Benamiel.",
+          "likeCount" : 0,
+          "id" : "68ab9be53a0dcb7feb8e161e",
+          "title" : null,
+          "userId" : 99680796,
+          "matchId" : null,
+          "commentCount" : 1
+        },
+        "sort" : [
+          1756077029707
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab9a913a0dcb7feb8e15f9",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756076689845,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756076689845,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Real Madrid secured a dramatic late win against Real Oviedo, with Vinícius Júnior netting the decisive goal in the 90+2nd minute to make it 1-0.",
+          "likeCount" : 0,
+          "id" : "68ab9a913a0dcb7feb8e15f9",
+          "title" : null,
+          "userId" : 99678928,
+          "matchId" : null,
+          "commentCount" : 1
+        },
+        "sort" : [
+          1756076689845
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab96253a0dcb7feb8e151c",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756075557181,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756075557181,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Here's a bold prediction: Leeds will finish higher than Manchester United this season. Yes, they got absolutely battered by Arsenal, but their performance against Everton was genuinely impressive. Ampadu and Tanaka look like serious talents. They've got what it takes to pick up points against the other teams struggling in the league. As for United, honestly, there's nothing to suggest they'll improve on last year. Dorgu seems limited, Bruno is completely inconsistent, and the rest just aren't cutting it. Sesko might be their only glimmer of hope. They've brought in a couple of players who are, frankly, mid-table specialists, yet their fans expect a top-half finish – shake my head. On reflection, it's probably more about Leeds scraping 12th or 13th, rather than United truly plummeting below that. United will certainly be in a tough spot, so the real question is whether Leeds can seize the opportunity.",
+          "likeCount" : 0,
+          "id" : "68ab96253a0dcb7feb8e151c",
+          "title" : null,
+          "userId" : 99677987,
+          "matchId" : null,
+          "commentCount" : 0
+        },
+        "sort" : [
+          1756075557181
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab836b3a0dcb7feb8e1184",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756070763885,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756070763885,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Rodrygo? Any fresh whispers about a massive PSG bid for him and Real Madrid? Earlier in the transfer window, there were some reports circulating. Could that be why things feel a bit quiet on our end now?",
+          "likeCount" : 0,
+          "id" : "68ab836b3a0dcb7feb8e1184",
+          "title" : null,
+          "userId" : 99678009,
+          "matchId" : null,
+          "commentCount" : 1
+        },
+        "sort" : [
+          1756070763885
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab6da53a0dcb7feb8e0cd5",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756065189569,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756065189569,
+          "readPermission" : "PUBLIC",
+          "contentText" : "To all you Evertonians: what was the vibe like at the new stadium? I'm not an Everton fan myself, but the new ground looks fantastic, and I'm really curious to know what it felt like to actually be there.",
+          "likeCount" : 0,
+          "id" : "68ab6da53a0dcb7feb8e0cd5",
+          "title" : null,
+          "userId" : 99678873,
+          "matchId" : null,
+          "commentCount" : 2
+        },
+        "sort" : [
+          1756065189569
+        ]
+      },
+      {
+        "_index" : "article",
+        "_type" : "_doc",
+        "_id" : "68ab6b243a0dcb7feb8e0c48",
+        "_score" : null,
+        "_source" : {
+          "issueTime" : 1756064548899,
+          "openCommentState" : "PUBLIC",
+          "createTime" : 1756064548899,
+          "readPermission" : "PUBLIC",
+          "contentText" : "Osasuna secured a historic 1-0 victory over Valencia at home, a result that propels them past Real Valladolid and into the 13th spot in La Liga's all-time historical ranking. This marks their highest-ever position in the league's illustrious history.",
+          "likeCount" : 0,
+          "id" : "68ab6b243a0dcb7feb8e0c48",
+          "title" : null,
+          "userId" : 99679342,
+          "matchId" : null,
+          "commentCount" : 2
+        },
+        "sort" : [
+          1756064548899
+        ]
+      }
+    ]
+  },
+  "profile" : {
+    "shards" : [
+      {
+        "id" : "[Ka5NgXoTSZ2PasAxor65xQ][article][0]",
+        "searches" : [
+          {
+            "query" : [
+              {
+                "type" : "BooleanQuery",
+                "description" : """+(contentText:"r re e ea a al l" | title:"r re e ea a al l") #delFlag:0 #state:publish""",
+                "time_in_nanos" : 77890128,
+                "breakdown" : {
+                  "set_min_competitive_score_count" : 0,
+                  "match_count" : 20644,
+                  "shallow_advance_count" : 0,
+                  "set_min_competitive_score" : 0,
+                  "next_doc" : 12750590,
+                  "match" : 63764109,
+                  "next_doc_count" : 21710,
+                  "score_count" : 0,
+                  "compute_max_score_count" : 0,
+                  "compute_max_score" : 0,
+                  "advance" : 161591,
+                  "advance_count" : 6,
+                  "score" : 0,
+                  "build_scorer_count" : 14,
+                  "create_weight" : 134270,
+                  "shallow_advance" : 0,
+                  "create_weight_count" : 1,
+                  "build_scorer" : 1079568
+                },
+                "children" : [
+                  {
+                    "type" : "DisjunctionMaxQuery",
+                    "description" : """(contentText:"r re e ea a al l" | title:"r re e ea a al l")""",
+                    "time_in_nanos" : 70867258,
+                    "breakdown" : {
+                      "set_min_competitive_score_count" : 0,
+                      "match_count" : 20644,
+                      "shallow_advance_count" : 0,
+                      "set_min_competitive_score" : 0,
+                      "next_doc" : 8378363,
+                      "match" : 61306003,
+                      "next_doc_count" : 21710,
+                      "score_count" : 0,
+                      "compute_max_score_count" : 0,
+                      "compute_max_score" : 0,
+                      "advance" : 234561,
+                      "advance_count" : 113,
+                      "score" : 0,
+                      "build_scorer_count" : 20,
+                      "create_weight" : 61178,
+                      "shallow_advance" : 0,
+                      "create_weight_count" : 1,
+                      "build_scorer" : 887153
+                    },
+                    "children" : [
+                      {
+                        "type" : "PhraseQuery",
+                        "description" : "contentText:\"r re e ea a al l\"",
+                        "time_in_nanos" : 67264490,
+                        "breakdown" : {
+                          "set_min_competitive_score_count" : 0,
+                          "match_count" : 20520,
+                          "shallow_advance_count" : 0,
+                          "set_min_competitive_score" : 0,
+                          "next_doc" : 6446705,
+                          "match" : 60139303,
+                          "next_doc_count" : 21704,
+                          "score_count" : 0,
+                          "compute_max_score_count" : 0,
+                          "compute_max_score" : 0,
+                          "advance" : 141114,
+                          "advance_count" : 113,
+                          "score" : 0,
+                          "build_scorer_count" : 14,
+                          "create_weight" : 19049,
+                          "shallow_advance" : 0,
+                          "create_weight_count" : 1,
+                          "build_scorer" : 518319
+                        }
+                      },
+                      {
+                        "type" : "PhraseQuery",
+                        "description" : "title:\"r re e ea a al l\"",
+                        "time_in_nanos" : 1462392,
+                        "breakdown" : {
+                          "set_min_competitive_score_count" : 0,
+                          "match_count" : 638,
+                          "shallow_advance_count" : 0,
+                          "set_min_competitive_score" : 0,
+                          "next_doc" : 519097,
+                          "match" : 673589,
+                          "next_doc_count" : 680,
+                          "score_count" : 0,
+                          "compute_max_score_count" : 0,
+                          "compute_max_score" : 0,
+                          "advance" : 63857,
+                          "advance_count" : 12,
+                          "score" : 0,
+                          "build_scorer_count" : 13,
+                          "create_weight" : 3397,
+                          "shallow_advance" : 0,
+                          "create_weight_count" : 1,
+                          "build_scorer" : 202452
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type" : "TermQuery",
+                    "description" : "delFlag:0",
+                    "time_in_nanos" : 1574762,
+                    "breakdown" : {
+                      "set_min_competitive_score_count" : 0,
+                      "match_count" : 0,
+                      "shallow_advance_count" : 0,
+                      "set_min_competitive_score" : 0,
+                      "next_doc" : 0,
+                      "match" : 0,
+                      "next_doc_count" : 0,
+                      "score_count" : 0,
+                      "compute_max_score_count" : 0,
+                      "compute_max_score" : 0,
+                      "advance" : 1519674,
+                      "advance_count" : 21752,
+                      "score" : 0,
+                      "build_scorer_count" : 18,
+                      "create_weight" : 12390,
+                      "shallow_advance" : 0,
+                      "create_weight_count" : 1,
+                      "build_scorer" : 42698
+                    }
+                  },
+                  {
+                    "type" : "TermQuery",
+                    "description" : "state:publish",
+                    "time_in_nanos" : 1599728,
+                    "breakdown" : {
+                      "set_min_competitive_score_count" : 0,
+                      "match_count" : 0,
+                      "shallow_advance_count" : 0,
+                      "set_min_competitive_score" : 0,
+                      "next_doc" : 0,
+                      "match" : 0,
+                      "next_doc_count" : 0,
+                      "score_count" : 0,
+                      "compute_max_score_count" : 0,
+                      "compute_max_score" : 0,
+                      "advance" : 1564428,
+                      "advance_count" : 21716,
+                      "score" : 0,
+                      "build_scorer_count" : 18,
+                      "create_weight" : 1571,
+                      "shallow_advance" : 0,
+                      "create_weight_count" : 1,
+                      "build_scorer" : 33729
+                    }
+                  }
+                ]
+              }
+            ],
+            "rewrite_time" : 115939,
+            "collector" : [
+              {
+                "name" : "SimpleFieldCollector",
+                "reason" : "search_top_hits",
+                "time_in_nanos" : 7594897
+              }
+            ]
+          }
+        ],
+        "aggregations" : [ ]
+      }
+    ]
+  }
+}
