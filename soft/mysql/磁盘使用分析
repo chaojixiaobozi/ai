@@ -1,0 +1,41 @@
+SELECT 
+    table_schema AS '数据库',
+    ROUND(SUM(data_length + index_length) / 1024 / 1024 /1024, 2) AS '占用GB'
+FROM information_schema.tables
+GROUP BY table_schema
+ORDER BY 占用GB DESC;
+
+
+SELECT 
+    COALESCE(table_schema, '总计') AS '数据库',
+    ROUND(SUM(data_length + index_length) / 1024 / 1024 / 1024, 2) AS '占用GB'
+FROM information_schema.tables
+GROUP BY table_schema WITH ROLLUP
+ORDER BY 
+    CASE WHEN table_schema IS NULL THEN 1 ELSE 0 END,
+    占用GB DESC;
+
+    capricornus	3.07
+    xxl_job	1.54
+    user	0.67
+    operation	0.01
+    information_schema	0.00
+    nacos	0.00
+    performance_schema	0.00
+    ry-vue	0.00
+    总计	5.28
+
+    显示使用了10G磁盘，另外5G用在了哪里？
+    实际存储大概5.9，redolog存储大概3g，是正常的。
+    xxl_job是否可以清理；
+
+    capricornus那个表占用数据多；
+
+
+    分析xxl_job库个表数据情况
+
+
+
+    
+
+
