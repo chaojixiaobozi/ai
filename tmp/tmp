@@ -1,1 +1,62 @@
-{"op":"command","ns":"community.userStatistics","planSummary":"COLLSCAN","nreturned":101,"responseLength":25102,"writeConcern":{"wtimeout":0,"provenance":"implicitDefault","w":"majority"},"storage":{},"locks":{"FeatureCompatibilityVersion":{"acquireCount":{"r":{"$numberLong":"6211"}}},"Mutex":{"acquireCount":{"r":{"$numberLong":"4130"}}},"Global":{"acquireCount":{"r":{"$numberLong":"6211"}}}},"flowControl":{},"command":{"pipeline":[{"$match":{"articleCount":{"$gt":0}}},{"$lookup":{"localField":"userId","as":"subscriptions","foreignField":"creatorId","from":"subscription"}},{"$project":{"lastPostTime":1,"subscriptions":1,"subscriptionArticleCount":1,"articleCount":1,"thirtyArticleCount":1,"userName":1,"userId":1,"thirtyLikeCount":1,"commentCount":1}},{"$group":{"lastPostTime":{"$first":"$lastPostTime"},"subscriptions":{"$first":"$subscriptions"},"subscriptionCount":{"$first":{"$ifNull":["$subscriptionArticleCount",0]}},"thirtyArticleCount":{"$first":{"$ifNull":["$thirtyArticleCount",0]}},"_id":"$userId","userId":{"$first":"$userId"},"thirtyLikeCount":{"$first":{"$ifNull":["$thirtyLikeCount",0]}},"username":{"$first":"$userName"},"totalArticleCount":{"$first":{"$ifNull":["$articleCount",0]}},"commentCount":{"$first":{"$ifNull":["$commentCount",0]}}}},{"$project":{"lastPostTime":1,"totalMonths":{"$reduce":{"input":"$subscriptions","in":{"$add":["$$value",{"$ifNull":["$$this.totalCount",0]}]},"initialValue":0}},"subscriptionCount":1,"thirtyArticleCount":1,"subscribing":{"$size":{"$filter":{"input":"$subscriptions","as":"sub","cond":{"$gt":["$$sub.expiredTime",{"$date":"2025-09-18T11:28:13.477+08:00"}]}}}},"userId":1,"thirtyLikeCount":1,"username":1,"totalArticleCount":1,"commentCount":1,"contracting":{"$size":{"$ifNull":["$subscriptions",[]]}}}}],"cursor":{},"lsid":{"id":{"$binary":"X+jV1e1OTW+heq4AjD+vJg==","$type":"04"}},"$db":"community","$clusterTime":{"clusterTime":{"$timestamp":{"t":1758166084,"i":6}},"signature":{"keyId":{"$numberLong":"7520587653415174151"},"hash":{"$binary":"hcEuFiXEjkFML+m3e6p/jZJmGgQ=","$type":"00"}}},"aggregate":"userStatistics"},"cursorid":{"$numberLong":"2452558773569834371"},"queryHash":"3C6EF1DE","planningTimeMicros":87,"protocol":"op_msg","keysExamined":0,"planCacheKey":"3C6EF1DE","numYield":2080,"readConcern":{"provenance":"implicitDefault","level":"local"},"replRole":{"stateStr":"PRIMARY","_id":0},"docsExamined":3618343,"queryFramework":"classic","millis":2128}
+[
+    {
+        '_id': ObjectId("68c4c02e56d6fa3ca5498789"),
+        'statisticalDate': "2025-09-13",
+        'userId': NumberLong("89593426"),
+        'likeArticleCount': 34,
+        'consultCount': 34
+    },
+    {
+        '_id': ObjectId("68c3644856d6fa3ca5ecb546"),
+        'statisticalDate': "2025-09-12",
+        'userId': NumberLong("89593426"),
+        'articleCount': 1,
+        'likeArticleCount': 54,
+        'consultCount': 74
+    },
+    {
+        '_id': ObjectId("68c3457256d6fa3ca5e44fa6"),
+        'statisticalDate': "2025-09-11",
+        'userId': NumberLong("89593426"),
+        'articleCount': 2,
+        'consultCount': 6,
+        'likeArticleCount': 4
+    }
+]
+
+
+
+{
+    "_id": "ObjectId(\"68d091bd32de9848a6223249\")",
+    "userId": "NumberLong(\"89593426\")",
+    "yesterdayFansCount": 0,
+    "yesterdayLikeCount": 0,
+    "yesterdayConsultCount": 0,
+    "beforeYesterdayFansCount": 0,
+    "beforeYesterdayLikeCount": 0,
+    "beforeYesterdayConsultCount": 0,
+    "consultCount": 22,
+    "_class": "com.huaying.community.entity.mongo.UserStatisticsDaily"
+  }
+
+
+  {18 items
+"_id":"ObjectId("68c32eb272049a229419a152")"
+"userId":"NumberLong("89593426")"
+"userName":"loukoumaneki165"
+"fansCount":0
+"likeCount":92
+"consultCount":22
+"likeArticleCount":0
+"attentionCount":15
+"articleCount":3
+"commentCount":5
+"thirtyArticleCount":3
+"thirtyLikeCount":92
+"subscriptionArticleCount":0
+"userType":1
+"createTime":"ISODate("2025-09-11T20:18:58.650Z")"
+"updateTime":"ISODate("2025-09-11T20:18:58.650Z")"
+"_class":"com.huaying.community.entity.mongo.UserStatistics"
+"lastPostTime":"ISODate("2025-09-12T00:07:36.597Z")"
+}
