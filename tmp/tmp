@@ -1,62 +1,27 @@
-[
-    {
-        '_id': ObjectId("68c4c02e56d6fa3ca5498789"),
-        'statisticalDate': "2025-09-13",
-        'userId': NumberLong("89593426"),
-        'likeArticleCount': 34,
-        'consultCount': 34
-    },
-    {
-        '_id': ObjectId("68c3644856d6fa3ca5ecb546"),
-        'statisticalDate': "2025-09-12",
-        'userId': NumberLong("89593426"),
-        'articleCount': 1,
-        'likeArticleCount': 54,
-        'consultCount': 74
-    },
-    {
-        '_id': ObjectId("68c3457256d6fa3ca5e44fa6"),
-        'statisticalDate': "2025-09-11",
-        'userId': NumberLong("89593426"),
-        'articleCount': 2,
-        'consultCount': 6,
-        'likeArticleCount': 4
-    }
-]
+10月份建议排期
+
+AI发表预测 启业
+WEB端足球项目优化需求 文杰
+APP球类项目优化需求 文杰
+202510-APP 社区细节优化  少真/文杰
+金币活动奖励 启业、浩然
+APP用户数据追踪需求 启业
+202510-WEB细节优化 敬淼，少真，文杰
+推送消息运营需求 文杰
+聊天私聊群聊优化 启业，正阳
+聊天板块二期需求 少真，正扬
+202510-后端功能优化 文杰、少真
 
 
+APP
+1. 压缩包
+2. 未统一协议问题处理
+4. 202510-APP 社区细节优化 志成
+5. 金币奖励活动 浩然
+6. APP球类项目优化需求 浩然
+7. APP用户数据追踪需求 正扬
+8. 聊天私聊群聊优化 正扬
+9. 聊天板块二期需求 浩然+志成
 
-{
-    "_id": "ObjectId(\"68d091bd32de9848a6223249\")",
-    "userId": "NumberLong(\"89593426\")",
-    "yesterdayFansCount": 0,
-    "yesterdayLikeCount": 0,
-    "yesterdayConsultCount": 0,
-    "beforeYesterdayFansCount": 0,
-    "beforeYesterdayLikeCount": 0,
-    "beforeYesterdayConsultCount": 0,
-    "consultCount": 22,
-    "_class": "com.huaying.community.entity.mongo.UserStatisticsDaily"
-  }
+202510-WEB细节优化 敬淼
 
-
-  {18 items
-"_id":"ObjectId("68c32eb272049a229419a152")"
-"userId":"NumberLong("89593426")"
-"userName":"loukoumaneki165"
-"fansCount":0
-"likeCount":92
-"consultCount":22
-"likeArticleCount":0
-"attentionCount":15
-"articleCount":3
-"commentCount":5
-"thirtyArticleCount":3
-"thirtyLikeCount":92
-"subscriptionArticleCount":0
-"userType":1
-"createTime":"ISODate("2025-09-11T20:18:58.650Z")"
-"updateTime":"ISODate("2025-09-11T20:18:58.650Z")"
-"_class":"com.huaying.community.entity.mongo.UserStatistics"
-"lastPostTime":"ISODate("2025-09-12T00:07:36.597Z")"
-}
